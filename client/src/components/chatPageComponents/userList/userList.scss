@@ -1,0 +1,47 @@
+@import "../../../styles/variables.scss";
+.user-list-container {
+  h4 {
+    border-right: 2px solid $soft-bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: $soft-bg;
+    span {
+      img {
+        cursor: pointer;
+        &:nth-child(1) {
+          margin-right: 40px;
+        }
+        &:nth-child(2) {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+
+  .user-chat {
+    &:hover {
+      background-color: $soft-bg;
+    }
+    transition: all 0.8s ease;
+    // border: 1px solid blue;
+    cursor: pointer;
+    padding: 30px;
+    border-bottom: 2px solid $soft-bg;
+    span {
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+    p {
+      float: right;
+    }
+  }
+}

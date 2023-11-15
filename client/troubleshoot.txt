@@ -1,0 +1,2 @@
+install this to avoid import react error: npm i -D @types/react
+Saas tutorial: https://www.freecodecamp.org/news/how-to-use-sass-with-css/

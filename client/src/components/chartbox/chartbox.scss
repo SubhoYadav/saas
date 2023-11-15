@@ -1,0 +1,40 @@
+.chart-box {
+  display: flex;
+  height: 100%;
+}
+
+.analytics {
+  // background-color: rgba(130, 238, 134, 0.285);
+
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    display: inline;
+    width: 40px;
+  }
+
+  .title {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.chart {
+  // background-color: rgba(238, 130, 238, 0.285);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  .insights {
+    span {
+      &:first-child {
+        display: block;
+        font-weight: bolder;
+        font-size: 20px;
+      }
+    }
+  }
+}

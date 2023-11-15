@@ -1,0 +1,95 @@
+@import "../../styles/variables.scss";
+.data-table-container {
+  background-color: $form-bg-soft;
+  height: 100%;
+  border-radius: 12px;
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+    // border: 1px solid $main-color;
+    .export-import {
+      // border: 1px solid blue;
+      flex: 1;
+      margin: 8px;
+      display: flex;
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+    .filters {
+      // border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 8px;
+      display: flex;
+      flex: 1;
+      flex-wrap: nowrap;
+      margin-top: 15px;
+      margin-right: 10px;
+      input {
+        margin-left: 15px;
+        background-color: $form-bg-soft;
+      }
+      select {
+        margin-left: 15px;
+      }
+      button {
+        background-color: $form-bg-dark;
+        padding: 15px;
+        border-radius: 10px;
+      }
+    }
+  }
+  button.upld-dnld-btn {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: $soft-bg;
+    outline: none;
+    border: none;
+    color: $main-color;
+  }
+}
+
+table {
+  // border: 1px solid red;
+  border: none;
+  margin: 25px 8px;
+  width: 100%;
+  thead {
+    th {
+      // border: 1px solid blue;
+    }
+  }
+  tbody {
+    tr {
+      margin-top: 25px;
+      width: 100%;
+      border-bottom: 1px solid $soft-color;
+      border-bottom: 1px solid green;
+      background-color: $soft-bg;
+      td {
+        // display: table-cell;
+        // margin: 15px;
+        text-align: center;
+        // border: 1px solid green;
+      }
+      td {
+        color: $soft-color;
+      }
+    }
+  }
+}
+
+.user-details {
+  // border: 1px solid green;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+// Following css may be helpful in some cases
+// display:table-header-group;

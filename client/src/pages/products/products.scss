@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.product-checkout-container {
+  height: 100%;
+  // border: 1px solid $dark-bg;
+  display: flex;
+  padding: 25px;
+  .product-checkout-left {
+    flex: 1;
+    .payment-methods {
+      padding: 10px;
+      span {
+        width: 150px;
+        margin-right: 20px;
+      }
+    }
+    input {
+      background-color: transparent;
+      outline: none;
+      border: 1px solid $soft-bg;
+      padding: 15px;
+      border-radius: 10px;
+      caret-color: $soft-color;
+    }
+  }
+  .product-checkout-right {
+    flex: 1;
+    .shipping-info {
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+.ccontainer {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  .boxc {
+    &:nth-child(1) {
+      border-right: 2px solid $soft-bg;
+    }
+  }
+
+  // .boxc {
+  // border: 1px solid red;
+  // }
+}
+
+// ❗Ye ek master property hai: width: 100% ise hamesha yaad rakho
+
+// ❗keep different class names for different pages and components

@@ -1,0 +1,2 @@
+STUN server: Responsible for generating the ICE candidates
+ICE: Interactive Connectivity Establishment

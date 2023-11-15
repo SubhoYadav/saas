@@ -1,0 +1,2 @@
+custom hooks in react are used to outsource componenet logic so that it can be reused a number of times
+custom hooks are statefull, meaning the states and effects that the hook registers for multiple components are different from one another, they are not the copy of the same state and effects

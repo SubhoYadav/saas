@@ -1,0 +1,39 @@
+.notify-container {
+  position: absolute;
+  // top: -100px;
+  top: 8px;
+  left: 40%;
+  border-radius: 15px;
+  font-family: "Comic Neue", cursive;
+  background-color: #ffffff;
+  /* border: 1px solid black; */
+  padding: 10px;
+  width: 20vw;
+  height: 5vh;
+  // border-left: 10px solid #67b112; // success
+  // border-left: 10px solid #195997; // info
+  // border-left: 10px solid #ded400; // warning
+  // border-left: 10px solid #c65959; // Danger
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon img {
+    width: 41px;
+  }
+  .message {
+    margin-left: 30px;
+    width: 100%;
+
+    .msg-title {
+      // color: #67b112;
+      font-weight: bold;
+    }
+
+    .msg-desc {
+      color: #000;
+    }
+  }
+}
+
+/*  */

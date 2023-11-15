@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+.videocall-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20fr 7fr;
+  .videocall-box {
+    padding: 10px;
+    // border: 1px solid $soft-bg;
+    &:nth-child(4) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .my-video {
+      background-color: $form-bg-dark;
+      width: 100%;
+      height: 25%;
+      border-radius: 15px;
+      position: relative;
+
+      .img-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .button-grp {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      button {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}

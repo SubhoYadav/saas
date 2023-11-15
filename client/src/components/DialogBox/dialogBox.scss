@@ -1,0 +1,15 @@
+.modal {
+    position:absolute;
+    top: -100%;
+    left: 34%;
+    min-width: 50%;
+    min-height: 50%;
+    background: red;
+    border: none;
+    border-radius: 15px;
+    overflow-y: hidden;
+    // transition: all 5s ease-in-out;
+    &::backdrop {
+        background: rgba(0,0,0,.4);
+    }
+}

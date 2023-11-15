@@ -1,0 +1,19 @@
+.footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  span {
+    // this is how we use pseudo selectors in CSS
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      a {
+        margin-right: 10px;
+      }
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "title": "MAIN",
+    "excluded_roles": "",
+    "items": [
+      {
+        "icon": "/home.svg",
+        "linkText": "Home",
+        "lnk": "/",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/profile.svg",
+        "linkText": "Profile",
+        "lnk": "/products",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/live-chat.png",
+        "linkText": "Chats",
+        "lnk": "/chats",
+        "excluded_roles": "",
+        "width": "25px"
+      },
+      {
+        "icon": "/post.svg",
+        "linkText": "Posts",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/video-camera.png",
+        "linkText": "Video Call",
+        "lnk": "/videocall",
+        "excluded_roles": "",
+        "width": "25px"
+      }
+    ]
+  },
+  {
+    "title": "EXPLORE",
+    "excluded_roles": "",
+    "items": [
+      {
+        "icon": "/product.svg",
+        "linkText": "Sell",
+        "lnk": "/products",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/order.svg",
+        "linkText": "Consignments",
+        "excluded_roles": ""
+      }
+    ]
+  },
+  {
+    "title": "GENERAL",
+    "excluded_roles": "",
+    "items": [
+      {
+        "icon": "/note.svg",
+        "linkText": "Notes",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/form.svg",
+        "linkText": "Conduct Survey",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/calendar.svg",
+        "linkText": "Calendar",
+        "excluded_roles": ""
+      }
+    ]
+  },
+  {
+    "title": "MAINTAINANCE",
+    "excluded_roles": "ROLE_USER",
+    "items": [
+      {
+        "icon": "/user.svg",
+        "linkText": "Users",
+        "lnk": "/users",
+        "excluded_roles": ""
+      },
+      {
+        "icon": "/setting.svg",
+        "linkText": "Settings",
+        "lnk": "/settings",
+        "excluded_roles": "ROLE_USER"
+      },
+      {
+        "icon": "/backup.svg",
+        "linkText": "Backup",
+        "excluded_roles": "ROLE_USER"
+      }
+    ]
+  },
+  {
+    "title": "ANALYTICS",
+    "excluded_roles": "ROLE_USER",
+    "items": [
+      {
+        "icon": "/chart.svg",
+        "linkText": "Charts",
+        "excluded_roles": "ROLE_USER"
+      },
+      {
+        "icon": "/log.svg",
+        "linkText": "Logs ",
+        "excluded_roles": "ROLE_USER,ROLE_ADMIN"
+      }
+    ]
+  }
+]

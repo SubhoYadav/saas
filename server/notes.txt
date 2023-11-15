@@ -1,0 +1,140 @@
+Installing mysql within a docker container:
+installation instructions reference: https://hevodata.com/learn/docker-mysql/#t4
+
+1. Pull the image from docker hub: docker pull mysql/mysql-server:latest
+2. Run the docker image: docker run -p 3306:3306 -d --name own-sql mysql/mysql-server:latest
+3. Check whether the docker container is running or not: docker ps
+
+Log into your sql server:
+1. Check for the generated root password: docker logs own-sql
+
+own-sql server root password: K261r*^Y4TQ&9#?oIju*NI^E67;kLoI5 (auto-generated)
+own-sql server root password: tet@!ew87 (changed)
+
+
+
+docker exec -it own-sql bash
+Run: mysql -uroot -p 
+put the auto generated password to log into your mysql server
+Change your password: ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';
+
+****** ALTER USER 'root'@'localhost' IDENTIFIED BY 'tet@!ew87';
+
+Following command reloads the grant tables in MySQL, making the changes to user privileges immediately available.
+FLUSH PRIVILEGES
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'tet@!ew87'; 
+
+Update the host of a user in mysql:
+UPDATE mysql.user SET Host = 'localhost:8088' WHERE User = 'root';
+
+See the users of the mysql server using the following command:
+SELECT User, Host, Plugin FROM mysql.user;
+
+if you ever loose your root password then just stop and remove the container and create a new container 
+
+Following command grants access to all the databases and tables in the server to the specified user
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
+See the privileges for the user 
+SHOW GRANTS FOR 'root'@'%';
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+SEE the current user by running the following command: SELECT current_user();
+
+
+
+Mysql queries:
+CREATE TABLE `programming_languages`
+(
+  `id`            INT(11) NOT NULL auto_increment ,
+  `name`          VARCHAR(255) NOT NULL ,
+  `released_year` INT NOT NULL ,
+  `githut_rank`   INT NULL ,
+  `pypl_rank`     INT NULL ,
+  `tiobe_rank`    INT NULL ,
+  `created_at`    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+  `updated_at`    DATETIME on UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+  PRIMARY KEY (`id`),
+  UNIQUE `idx_name_unique` (`name`(255))
+)
+engine = innodb charset=utf8mb4 COLLATE utf8mb4_general_ci;
+
+INSERT INTO programming_languages(id,name,released_year,githut_rank,pypl_rank,tiobe_rank) 
+VALUES 
+(1,'JavaScript',1995,1,3,7),
+(2,'Python',1991,2,1,3),
+(3,'Java',1995,3,2,2),
+(4,'TypeScript',2012,7,10,42),
+(5,'C#',2000,9,4,5),
+(6,'PHP',1995,8,6,8),
+(7,'C++',1985,5,5,4),
+(8,'C',1972,10,5,1),
+(9,'Ruby',1995,6,15,15),
+(10,'R',1993,33,7,9),
+(11,'Objective-C',1984,18,8,18),
+(12,'Swift',2015,16,9,13),
+(13,'Kotlin',2011,15,12,40),
+(14,'Go',2009,4,13,14),
+(15,'Rust',2010,14,16,26),
+(16,'Scala',2004,11,17,34);
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'172.17.0.1' WITH GRANT OPTION;
+
+
+CREATE USER 'vartalapp'@'%' IDENTIFIED BY 'tet@!ew87';
+GRANT ALL PRIVILEGES ON *.* TO 'vartalapp'@'%';
+tet@!ew87
+
+
+n#2yu.%,A#4d&y*Hx4AJ4Se232Rh3?nH
+
+Added a new user to resolve the connection issue
+CREATE USER 'root'@'172.17.0.1' IDENTIFIED BY 'tet@!ew87'
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'172.17.0.1' WITH GRANT OPTION;
+CREATE USER 'meshchatapp'@'172.18.0.1' IDENTIFIED BY 'M1n1V3ntuR3Lab3015$^'
+CREATE USER 'meshchatapp'@'172.18.0.1' IDENTIFIED BY 'M1n1V3ntuR3Lab3015$^'
+mysql -u'root' -p'M1n1V3ntuR3Lab3015$^' mysql
+To run sql queries into the terminal use:
+user: root
+password: tet@!ew87
+
+
+mysql password on sy-practice ec2 instance: 
+passeord: tet@!#ew87
+
+Following command changes the auth method for mysql user:
+
+ALTER USER 'root'@'172.17.0.1' IDENTIFIED WITH caching_sha2_password BY 'tet@!ew87';
+
+Auth methods for mysql:
+mysql_native_password
+caching_sha2_password
+
+the mysql2 driver works with HOST=localhost in config.env file.
+
+
+
+docker run -d -p 3306:3306 --name own-sql mysql/mysql-server:latest
+
+
+
+Mysql passwords:
+
+tet@!ew87
+
+In order to connect phpmyadmin with mysql set the PMA_ARBITRARY=1 flag while creating the container for phpmyadmin this will cause phpmyadmin not to connect to any specific mysql server
+https://linux.how2shout.com/install-phpmyadmin-on-docker-to-manage-mariadb-or-mysql/
+
+docker run --name myadmin -d -e PMA_ARBITRARY=1 -p 8088:80 phpmyadmin
+
+
+winston logger: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
+
+
+Use the following command to create a bash script
+
+docker build --build-arg NODE_ENV=development -t server .
+
+docker run -v $(pwd):/app:ro -p 6066:6066 -p 8089:8089 -d --name server server

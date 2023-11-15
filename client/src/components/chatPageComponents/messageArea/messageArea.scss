@@ -1,0 +1,104 @@
+@import "../../../styles/variables.scss";
+.message-area-container {
+  height: 100%;
+  border-right: 2px solid $soft-bg;
+  overflow: hidden;
+  // To prevent scrolling of the page
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 83.75px;
+    border-bottom: 2px solid $soft-bg;
+    position: relative;
+    i {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+  .main-area {
+    display: flex;
+    height: 100%;
+    // The "flex:4" property won't work with flex direction column so giving the containersome height to ensure that the "flex:4" property works properly .
+    flex-direction: column;
+    .chat-messages {
+      display: flex;
+      align-items: flex-end; // ****
+      // overflow: scroll;
+      padding: 25px;
+      // max-height: calc(100vh - 83.75px + 294.69px);
+      // border: 1px solid greenyellow;
+      flex: 3;
+      // 💯 something to learn
+      .inner-container {
+        width: 100%;
+        // border: 1px solid red;
+        // overflow: scroll;
+      }
+      .single-msg {
+        display: flex;
+        align-items: center;
+      }
+      .msg {
+        background-color: $soft-bg;
+        border-radius: 8px;
+        padding: 15px;
+        width: max-content;
+        height: max-content;
+      }
+    }
+    .reply-box-container {
+      flex: 1;
+      .reply-box {
+        // border: 1px solid green;
+        // padding: 70px;
+        border-radius: 5px;
+        height: 150px;
+        border: 1px solid $soft-bg;
+        margin: 50px;
+        input {
+          height: 60%;
+          width: 100%;
+          margin-left: 10px;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-radius: 10px;
+          caret-color: #ddd;
+        }
+        .reply-actions {
+          img {
+            margin: 15px;
+          }
+          .attach {
+            img {
+              margin: 10px;
+            }
+          }
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+.avatars {
+  padding: 20px;
+  img {
+    &:last-child {
+      color: $soft-bg;
+    }
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+    border-radius: 50%;
+
+    // &:nth-child(1) {
+    //   right: 2px;
+    // }
+    // &:nth-child(2) {
+    //   right: 4px;
+    // }
+  }
+}

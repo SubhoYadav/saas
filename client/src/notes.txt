@@ -1,0 +1,16 @@
+creating animations in route transitions
+I will be using a package called react-transition-group in order to animate route transitions 
+
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+
+
+rechart components: 
+import {
+  LineChart,
+  CartesianGrid,
+  YAxis,
+  Legend,
+  XAxis,
+  Tooltip,
+  Line,
+} from "recharts";

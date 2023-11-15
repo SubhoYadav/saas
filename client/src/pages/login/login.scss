@@ -1,0 +1,103 @@
+@import "../../styles/variables.scss";
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #1f3758;
+  align-items: center;
+  .login-page {
+    width: 70%;
+    height: 80%;
+    border-radius: 25px;
+    background-color: #112541;
+    display: flex;
+    .login-left {
+      display: flex;
+      flex-direction: column;
+      // gap: 70px;
+      // justify-content: space-evenly;
+      flex: 1;
+      // border: 1px solid red;
+      padding: 40px;
+      small {
+        // (small,span) tags are inline tag aand you cannot set vertical spacings in a strictly inline element,
+
+        // work arounds:
+        // set the display: inline-block and then give margin top
+        // use line-height property (but that will give spacing from both top and bottom
+        color: $soft-color;
+        display: inline-block;
+        margin-top: 19px;
+      }
+      h3 {
+        margin-top: 10px;
+        text-align: center;
+      }
+      .external-login-button-grp {
+        display: flex;
+        button.external-login-button {
+          padding: 15px;
+          text-align: center;
+          border-radius: 5px;
+          background-color: $soft-bg;
+          outline: none;
+          border: none;
+          color: $main-color;
+          margin-top: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+    small.warn {
+      display: inline;
+    }
+    .login-right {
+      flex: 1;
+      // border: 1px solid green;
+      .canvas {
+        display: flex;
+        margin: 50px;
+        // padding: 50px;
+        height: 80%;
+        border-radius: 30px;
+        background-color: #0b1c33;
+        img {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
+form {
+  margin-top: 20px;
+}
+label {
+  font-weight: bold;
+}
+input,select {
+  background-color: #0b1c33;
+  outline: none;
+  width: 100%;
+  // padding does not work on input tags
+  // padding: 15px;
+  border: 1px solid $soft-bg;
+  padding: 15px;
+  border-radius: 10px;
+  caret-color: $soft-color;
+}
+
+button.create-account {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #71c775;
+  font-weight: bold;
+  color: $main-color;
+  border-radius: 8px;
+}
