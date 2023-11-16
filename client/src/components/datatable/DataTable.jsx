@@ -7,9 +7,17 @@ import "./datatable.scss";
 import Login from "../../pages/login/Login";
 
 export default function DataTable() {
+  const filters = ["user_role", "deleted"];
+  const [selectedObj, setSelectedObj] = React.useState({
+    user_role: "",
+    deleted: "",
+  });
+  // The array contains the data points, on the basis of which we want to filter out the dataset
+  const [filter, setFilter] = React.useState({});
+
   const [users, setUsers] = React.useState([]);
   const [searchText, setSearchText] = React.useState("");
-  const [controlAddUserDialog, setcontrolAddUserDialog] = React.useState(false)
+  const [controlAddUserDialog, setcontrolAddUserDialog] = React.useState(false);
   // Fetch Methods
 
   // Since, use Effect's callback returns a function (cleanup function) it cannot be async so creating the async functions here
@@ -20,12 +28,47 @@ export default function DataTable() {
     }
   }
 
-  const userListSearch = async (searchString) => {
-    const userListSearch = await UserApi.userListSearch(searchString);
+  function setFilters() {
+    console.log("Setting filters ");
+    let filterObj = {};
+    let selectedObj = {};
+    console.log("User ", users);
+    for (let i of filters) {
+      let filterData = users.map((user) => user[i]);
+      filterData = Array.from(new Set(filterData));
+      filterObj[i] = filterData;
+      selectedObj[i] = filterObj[i][0];
+    }
+    console.log("Filter Object ", filterObj);
+    setFilter(filterObj);
+    // setSelectedObj(selectedObj);
+  }
+
+  const userListSearch = async (searchString = "", filterObj = null) => {
+    console.log(filterObj);
+    const userListSearch = await UserApi.userListSearch(searchString, {
+      filter: filterObj,
+    });
     if (userListSearch.status) {
       setUsers(userListSearch.data);
     }
   };
+
+  function handleSelectChange(event, element) {
+    console.log("On change fired");
+    let newSelectedObj = { ...selectedObj };
+    newSelectedObj[element] = event.target.value;
+    setSelectedObj(newSelectedObj);
+    if (event.target.value != "ALL") {
+      userListSearch("", newSelectedObj);
+    } else {
+      userListSearch();
+    }
+  }
+
+  React.useEffect(() => {
+    setFilters();
+  }, []);
   // Fetch Methods
   React.useEffect(() => {
     fetchUserList();
@@ -88,12 +131,26 @@ export default function DataTable() {
           {/* Delete Button */}
         </div>
         <div className="filters">
-          <select name="" id="">
-            <option value="">Developer</option>
-          </select>
-          <select name="" id="">
-            <option value="">Active</option>
-          </select>
+          {Object.keys(filter).map((element, index) => {
+            return (
+              <select
+                name=""
+                id=""
+                key={index}
+                value={selectedObj[element]}
+                onChange={(event) => handleSelectChange(event, element)}
+              >
+                {filter[element].map((e, i) => {
+                  return (
+                    <option value={e} key={i}>
+                      {e}
+                    </option>
+                  );
+                })}
+                <option value="ALL">ALL</option>
+              </select>
+            );
+          })}
           <input
             type="text"
             placeholder="Search..."
@@ -107,7 +164,7 @@ export default function DataTable() {
               marginLeft: "15px",
               alignItems: "center",
               gap: "5px",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
             onClick={() => setcontrolAddUserDialog(!controlAddUserDialog)}
           >
@@ -157,7 +214,7 @@ export default function DataTable() {
           })}
         </tbody>
       </table>
-      <DialogBox isDialogOpen = {controlAddUserDialog}>
+      <DialogBox isDialogOpen={controlAddUserDialog}>
         <Login />
         {/* Subho Yadav */}
       </DialogBox>

@@ -12,8 +12,11 @@ const UserApi = {
     const response = await saasApi.post("/user/list");
     return response.data;
   },
-  userListSearch: async (searchString) => {
-    const response = await saasApi.post(`/user/list/?search=${searchString}`);
+  userListSearch: async (searchString, filterObj) => {
+    const response = await saasApi.post(
+      `/user/list/?search=${searchString}`,
+      filterObj
+    );
     return response.data;
   },
 };

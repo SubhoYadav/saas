@@ -48,6 +48,20 @@ const userList = async (userObj) => {
       WHERE user_name LIKE "%${userObj.searchString}%" OR user_email LIKE "%${userObj.searchString}%" OR user_mobile LIKE "%${userObj.searchString}%" OR user_role LIKE "%${userObj.searchString}%"
       OR src LIKE "%${userObj.searchString}%"
       `;
+    } else if (userObj.filter) {
+      let whereQuery = "";
+      for (let key in userObj.filter) {
+        if (userObj.filter[key]) {
+          whereQuery += `${key} = '${userObj.filter[key]}' AND `;
+        }
+      }
+      whereQuery += "1";
+      query = `
+      SELECT * 
+      FROM ${tableName}
+      WHERE ${whereQuery}
+      `;
+      console.log("|||| ", query);
     } else {
       query = `
       SELECT * 

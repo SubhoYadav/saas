@@ -2,7 +2,7 @@ const userModel = require("../model/userM.js");
 
 const userAdd = (request, response) => {
   const userObj = request.body;
-  console.log(userObj);
+
   const userAddQueryResponse = userModel.userAdd(userObj);
   if (!userAddQueryResponse) {
     return response.json({
@@ -33,6 +33,7 @@ const userLogin = async (request, response) => {
 
 const userList = async (request, response) => {
   const userObj = request.body;
+  console.log("Test", userObj);
   if (request.query.search) {
     userObj.searchString = request.query.search;
     const userListSearchQueryResponse = await userModel.userList(userObj);
