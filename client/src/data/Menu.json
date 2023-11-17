@@ -42,7 +42,7 @@
     "items": [
       {
         "icon": "/product.svg",
-        "linkText": "Sell",
+        "linkText": "Make Payment",
         "lnk": "/products",
         "excluded_roles": ""
       },

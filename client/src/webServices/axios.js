@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const saasApi = axios.create({
-  baseURL: "http://localhost:8089",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
 });
 
 export { saasApi };

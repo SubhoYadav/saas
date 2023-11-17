@@ -33,7 +33,13 @@ export default function Login() {
     loginSignUpTgleTxt: "Don't have an account ?",
   };
   // Extracting the setUserData function from react zustand store
-
+  const userStoreData = useUserDataStore(({ userData, setUserData }) => {
+    return {
+      userData,
+      setUserData,
+    };
+  });
+  console.log("User Store DataXXXXXX ", userStoreData);
   // Texts
   const handleExternalLogin = () => {
     console.log("Test External Login !!");
@@ -110,13 +116,16 @@ export default function Login() {
                     const addUserResp = await UserApi.addUser(values);
                   } else {
                     const loginUserResp = await UserApi.loginUser(values);
-                    // console.log("YYY ", loginUserResp);
-                    // if (loginUserResp.status) {
-                    //   loginUserResp.data.userIsLoggedIn = true;
-                    //   useUserDataStore((state) =>
-                    //     state.setUserData(loginResp.data)
-                    //   );
-                    // }
+                    console.log("YYY ", loginUserResp);
+                    if (loginUserResp.status) {
+                      const updatedUserData = {
+                        userIsLoggedIn: true,
+                        userRole: loginUserResp.data.user_role,
+                      };
+                      console.log("OOOUUULLL ", updatedUserData);
+                      console.log("User store data ", userStoreData);
+                      userStoreData.setUserData(updatedUserData);
+                    }
                   }
                   msgCtx.setnotificationObj({
                     type: notificationTypes.NOTIFICATION_TYPE_WARNING,

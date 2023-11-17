@@ -4,6 +4,7 @@
     "userEmail": "subho@gide.ai",
     "avatar": "avatar.png",
     "userAmt": "$500",
+    "lastLoggedIn": "11:30",
     "message": "Hey I am a developer"
   },
   {
@@ -11,6 +12,7 @@
     "userEmail": "dave@gide.ai",
     "avatar": "avatar5.png",
     "userAmt": "$600",
+    "lastLoggedIn": "11:30",
     "message": "Hey I am a teacher"
   },
   {
@@ -18,6 +20,7 @@
     "userEmail": "sara@gide.ai",
     "avatar": "avatar2.png",
     "userAmt": "$700",
+    "lastLoggedIn": "11:30",
     "message": "Hey I am Dave's sister"
   },
   {
@@ -25,6 +28,7 @@
     "userEmail": "james@gide.ai",
     "avatar": "avatar3.png",
     "userAmt": "$800",
+    "lastLoggedIn": "11:30",
     "message": "Hey I am his brother"
   },
   {
@@ -32,6 +36,7 @@
     "userEmail": "ed@gide.ai",
     "avatar": "avatar4.png",
     "userAmt": "$900",
+    "lastLoggedIn": "11:30",
     "message": "Hey, I am his father"
   },
   {
@@ -39,6 +44,7 @@
     "userEmail": "shubham@gide.ai",
     "avatar": "avatar6.png",
     "userAmt": "$1000",
+    "lastLoggedIn": "11:30",
     "message": "Hey I am his mother"
   }
 ]

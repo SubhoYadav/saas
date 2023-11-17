@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import { MessageContextProvider } from "./context/message-context.jsx";
 import { ToggleContextProvider } from "./context/toggle-context.jsx";
 import "./styles/global.scss";
+import "react-image-crop/src/ReactCrop.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <MessageContextProvider>

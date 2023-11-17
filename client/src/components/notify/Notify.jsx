@@ -14,9 +14,9 @@ export default function Notify() {
   const toggleCtx = useReadToggleCtx();
   const msgCtx = useReadMsgCtx();
 
-  console.log("Message context in notify ", msgCtx);
+  // console.log("Message context in notify ", msgCtx);
 
-  console.log("Notify Component ", toggleCtx);
+  // console.log("Notify Component ", toggleCtx);
 
   // Determinig the type of notification
   const notifyTypeObj = notifyTypesObjList.find(

@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+.user-dropdown-container {
+  position: absolute;
+  right: 50px;
+  top: 100px;
+  width: 20%;
+  border-radius: 15px;
+  height: 500px;
+  background-color: $form-bg-soft;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .user {
+    width: 100%;
+    display: block;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $soft-color;
+      margin: 15px auto;
+    }
+  }
+}

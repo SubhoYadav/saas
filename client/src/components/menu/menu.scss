@@ -27,6 +27,7 @@
       font-weight: 200;
 
       .linkText {
+        // display: none;
         @include lg {
           display: none;
         }

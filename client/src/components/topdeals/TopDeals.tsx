@@ -4,7 +4,7 @@ import Users from "../../data/Users.json";
 export default function TopDeals() {
   return (
     <>
-      <h1>Revenue</h1>
+      <h1>Recent Users</h1>
       <div className="topdeals">
         <div className="list">
           {Users.map((user, index) => {
@@ -17,7 +17,7 @@ export default function TopDeals() {
                     <span className="email">{user.userEmail}</span>
                   </div>
                 </div>
-                <span className="amt">{user.userAmt}</span>
+                <span className="amt">{user.lastLoggedIn}</span>
               </div>
             );
           })}

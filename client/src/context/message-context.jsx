@@ -8,8 +8,8 @@ const MessageContext = React.createContext({
 
 export const MessageContextProvider = ({ children }) => {
   const [notificationObj, setnotificationObj] = React.useState({
-    type: notificationTypeConfig.NOTIFICATION_TYPE_INFO,
-    message: "I won 900",
+    type: notificationTypeConfig.NOTIFICATION_TYPE_SUCCESS,
+    message: "Welcome to saas",
   });
   return (
     <MessageContext.Provider

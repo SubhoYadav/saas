@@ -8,7 +8,8 @@ export default function Footer() {
       </span>
       <span>
         <a href="">credits</a>
-        &copy;{new Date().getFullYear()} SAAS
+        SAAS {import.meta.env.VITE_APP_VERSION_NO} &copy;
+        {new Date().getFullYear()}
       </span>
     </div>
   );

@@ -9,7 +9,7 @@ const ToggleContext = React.createContext({
 
 export const ToggleContextProvider = ({ children }) => {
   const [showChatProfile, setShowChatProfile] = React.useState(false);
-  const [showNotification, setShowNotification] = React.useState(true);
+  const [showNotification, setShowNotification] = React.useState(false);
   return (
     <ToggleContext.Provider
       value={{
