@@ -121,6 +121,10 @@ export default function Login() {
                       const updatedUserData = {
                         userIsLoggedIn: true,
                         userRole: loginUserResp.data.user_role,
+                        userName: loginUserResp.data.user_name,
+                        userEmail: loginUserResp.data.user_email,
+                        userProfileImg: loginUserResp.data.user_profile_img,
+                        userId: loginUserResp.data.user_id,
                       };
                       console.log("OOOUUULLL ", updatedUserData);
                       console.log("User store data ", userStoreData);

@@ -13,7 +13,12 @@ export default function Notify() {
   // Reading the context and adding the toggle state
   const toggleCtx = useReadToggleCtx();
   const msgCtx = useReadMsgCtx();
-
+  // React.useEffect(() => {
+  //   console.log("Notification component rendered");
+  // });
+  setTimeout(() => {
+    toggleCtx.setShowNotification(false);
+  }, 5000);
   // console.log("Message context in notify ", msgCtx);
 
   // console.log("Notify Component ", toggleCtx);

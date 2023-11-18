@@ -26,4 +26,26 @@
       margin: 15px auto;
     }
   }
+  span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  small {
+    color: $soft-color;
+  }
+  button {
+    margin-top: 15px;
+    cursor: pointer;
+    background: $soft-bg;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: $main-color;
+    img {
+      margin-right: 10px;
+      width: 30px;
+    }
+    display: flex;
+    align-items: center;
+  }
 }

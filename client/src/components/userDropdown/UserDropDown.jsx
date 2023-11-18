@@ -1,12 +1,30 @@
 import React from "react";
 import ReactCrop from "react-image-crop";
 import "./userDropDown.scss";
+import useUserDataStore from "../../zustand/userDataStore";
 export default function UserDropDown() {
   const [crop, setCrop] = React.useState();
+  const userData = useUserDataStore(({ userData, setUserData }) => {
+    return {
+      userData,
+      setUserData,
+    };
+  });
+  function handleLogout() {
+    const logoutUserData = {
+      userRole: "",
+      userIsLoggedIn: false,
+      userName: "",
+      userEmail: "",
+      userProfileImg: "",
+      userId: "",
+    };
+    userData.setUserData(logoutUserData);
+  }
   return (
     <div className="user-dropdown-container">
       <div className="user">
-        <img src="avatar3.png" alt="" />
+        <img src={userData.userData.userProfileImg} alt="" />
         <i
           onClick={() => {
             console.log("Edit img...");
@@ -26,11 +44,16 @@ export default function UserDropDown() {
           />
         </i>
       </div>
-      <span>Subho Yadav</span>
+      <span>{userData.userData.userName}</span>
+      <small>{userData.userData.userRole.split("_")[1]}</small>
+      <button onClick={handleLogout}>
+        <img src="/check-out.png" alt="" />
+        Log out
+      </button>
       {/* <ReactCrop crop={crop} onChange={(c) => setCrop(c)}>
         <img src="avatar.png" alt="" />
       </ReactCrop> */}
-      <input type="file" />
+      {/* <input type="file" /> */}
     </div>
   );
 }

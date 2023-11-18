@@ -4,7 +4,6 @@ import Login from "../pages/login/Login";
 import useUserDataStore from "../zustand/userDataStore";
 
 export default function Authenticate({ children }) {
-  // @subho todo:- Read the logged in state from the zustand store
   const userStoreData = useUserDataStore(({ userData, setUserData }) => {
     return {
       userData,

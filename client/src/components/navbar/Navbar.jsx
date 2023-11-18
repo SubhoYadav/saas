@@ -4,8 +4,8 @@ import "./navbar.scss";
 import UserDropDown from "../userDropdown/UserDropDown";
 
 export default function Navbar() {
-  const userRole = useUserDataStore(({ userData }) => {
-    return userData.userRole;
+  const userData = useUserDataStore(({ userData }) => {
+    return userData;
   });
   const [showUserDropdown, setShowUserDropdown] = React.useState(false);
   return (
@@ -26,13 +26,13 @@ export default function Navbar() {
             className="user"
             onClick={() => setShowUserDropdown(!showUserDropdown)}
           >
-            <img src="avatar.png" alt="" />
+            <img src={userData.userProfileImg} alt="" />
             <div>
-              <p>Subho</p>
+              <p>{userData.userName.split(" ")[0]}</p>
               <small
                 style={{ display: "block", marginTop: "3px", fontSize: "12px" }}
               >
-                {userRole.split("_")[1]}
+                {userData.userRole.split("_")[1]}
               </small>
             </div>
           </div>

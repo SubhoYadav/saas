@@ -24,7 +24,7 @@ const userView = async (userObj) => {
   try {
     const query = `
 
-  SELECT user_id, user_role, socket_event
+  SELECT user_id, user_role, user_name, user_email, user_profile_img
   FROM ${tableName} 
   WHERE user_email = "${userObj.userEmail}" AND user_password = "${userObj.userPassword}";
   ;
