@@ -38,3 +38,18 @@
     }
   }
 }
+.button-grp-local {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  position: absolute;
+  button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    margin: 5px;
+  }
+  left: 40%;
+  bottom: 10px;
+}

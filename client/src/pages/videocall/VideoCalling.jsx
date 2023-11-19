@@ -32,7 +32,27 @@ export default function VideoCalling() {
         console.error(error);
       });
   }
+
+  function getLocalVideo() {
+    const mediaConstraints = {
+      audio: true, // We want an audio track
+      video: true, // And we want a video track
+    };
+    console.log(localVideo);
+    navigator.mediaDevices
+      .getUserMedia(mediaConstraints)
+      .then((localStream) => {
+        localVideo.current.srcObj = localStream;
+      })
+      .catch((error) => {
+        console.log("error!!!");
+      });
+  }
   const [addCall, setAddCall] = React.useState(false);
+  const [toggleVideo, setToggleVideo] = React.useState(true);
+  const [localVideoStream, setLocalVideoStream] = React.useState(null);
+  const localVideo = React.useRef(null);
+
   React.useEffect(() => {}, []);
   return (
     <div className="videocall-container">
@@ -69,8 +89,22 @@ export default function VideoCalling() {
           <UserList parent={"VideoCall"} />
         ) : (
           <div className="my-video">
+            <video src="" autoPlay muted ref={localVideo}></video>
             <div className="img-container">
               <img src="/success.svg" alt="" width="10%" />
+            </div>
+
+            <div className="button-grp-local">
+              <button>
+                <img src="/mute.png" alt="" width="50px" />
+              </button>
+              <button onClick={getLocalVideo}>
+                {toggleVideo ? (
+                  <img src="/video-player.png" alt="" width="50px" />
+                ) : (
+                  <img src="/video.png" alt="" width="50px" />
+                )}
+              </button>
             </div>
           </div>
         )}

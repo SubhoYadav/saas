@@ -91,7 +91,7 @@ tet@!ew87
 n#2yu.%,A#4d&y*Hx4AJ4Se232Rh3?nH
 
 Added a new user to resolve the connection issue
-CREATE USER 'root'@'172.17.0.1' IDENTIFIED BY 'tet@!ew87'
+CREATE USER 'root'@'172.17.0.1' IDENTIFIED BY 'tet@!ew87' 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'172.17.0.1' WITH GRANT OPTION;
 CREATE USER 'meshchatapp'@'172.18.0.1' IDENTIFIED BY 'M1n1V3ntuR3Lab3015$^'
 CREATE USER 'meshchatapp'@'172.18.0.1' IDENTIFIED BY 'M1n1V3ntuR3Lab3015$^'
