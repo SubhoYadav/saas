@@ -89,7 +89,13 @@ export default function VideoCalling() {
           <UserList parent={"VideoCall"} />
         ) : (
           <div className="my-video">
-            <video src="" autoPlay muted ref={localVideo}></video>
+            <video
+              src=""
+              autoPlay
+              muted
+              ref={localVideo}
+              style={{ display: "none" }}
+            ></video>
             <div className="img-container">
               <img src="/success.svg" alt="" width="10%" />
             </div>
