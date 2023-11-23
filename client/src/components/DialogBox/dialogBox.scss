@@ -1,15 +1,23 @@
+@import "../../styles/variables.scss";
 .modal {
-    position:absolute;
-    top: -100%;
-    left: 34%;
-    min-width: 50%;
-    min-height: 50%;
-    background: red;
+  position: absolute;
+  top: -100%;
+  left: 34%;
+  min-width: 50%;
+  min-height: 50%;
+  background: $form-bg-soft;
+  border: none;
+  border-radius: 15px;
+  overflow-y: hidden;
+  // transition: all 5s ease-in-out;
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  button {
+    display: block;
+    margin-left: auto;
+    background: transparent;
     border: none;
-    border-radius: 15px;
-    overflow-y: hidden;
-    // transition: all 5s ease-in-out;
-    &::backdrop {
-        background: rgba(0,0,0,.4);
-    }
+    cursor: pointer;
+  }
 }

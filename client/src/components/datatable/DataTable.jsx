@@ -5,6 +5,7 @@ import "./datatable.scss";
 
 // Pls remove this component, its there only for testing purpouse
 import Login from "../../pages/login/Login";
+import FileUpload from "../fileUpload/FileUpload";
 
 export default function DataTable() {
   const filters = ["user_role", "deleted"];
@@ -215,8 +216,9 @@ export default function DataTable() {
         </tbody>
       </table>
       <DialogBox isDialogOpen={controlAddUserDialog}>
-        <Login />
+        {/* <Login /> */}
         {/* Subho Yadav */}
+        <FileUpload></FileUpload>
       </DialogBox>
     </div>
   );

@@ -17,4 +17,8 @@ router.post("/user/login", userController.userLogin);
 // Chat apis
 router.post("/chat/initiate", chatController.initiateChat);
 
+router.post("/upload_image", (req, res) => {
+  res.json({ msg: "recieving" });
+});
+
 module.exports = router;
