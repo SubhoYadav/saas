@@ -42,7 +42,8 @@ export default function VideoCalling() {
     navigator.mediaDevices
       .getUserMedia(mediaConstraints)
       .then((localStream) => {
-        localVideo.current.srcObj = localStream;
+        console.log("Local stream ", localStream);
+        localVideo.current.srcObject = localStream;
       })
       .catch((error) => {
         console.log("error!!!");
@@ -53,7 +54,9 @@ export default function VideoCalling() {
   const [localVideoStream, setLocalVideoStream] = React.useState(null);
   const localVideo = React.useRef(null);
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    console.log("Teraform ", localVideo.current.srcObj);
+  }, []);
   return (
     <div className="videocall-container">
       {/* <div className="videocall-box">
@@ -94,7 +97,7 @@ export default function VideoCalling() {
               autoPlay
               muted
               ref={localVideo}
-              style={{ display: "none" }}
+              // style={{ display: "none" }}
             ></video>
             <div className="img-container">
               <img src="/success.svg" alt="" width="10%" />
