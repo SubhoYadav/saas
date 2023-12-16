@@ -6,7 +6,7 @@ import Menu from "./menu/Menu.jsx";
 
 import { useLocation } from "react-router-dom";
 import Notify from "./notify/Notify";
-import notificationTypeConfig from "../cofigs/notificationTypes";
+// import notificationTypeConfig from "../cofigs/notificationTypes";
 
 export default function Layout() {
   const location = useLocation();

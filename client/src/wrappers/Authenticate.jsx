@@ -12,5 +12,6 @@ export default function Authenticate({ children }) {
   });
   console.log("UserData in the component ", userStoreData);
   // const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  return userStoreData.userData.userIsLoggedIn ? children : <Login />;
+  // return userStoreData.userData.userIsLoggedIn ? children : <Login />;
+  return children
 }
