@@ -6,7 +6,6 @@ import notificationTypes from "../../cofigs/notificationTypes.js";
 import useReadToggleCtx from "../../hooks/useReadTogglectx";
 import useReadMsgCtx from "../../hooks/useReadMsgCtx";
 import { UserApi } from "../../webServices/user";
-import useUserDataStore from "../../zustand/userDataStore";
 
 export default function Login() {
   const toggleCtx = useReadToggleCtx();
@@ -32,14 +31,6 @@ export default function Login() {
     loginSignUpTgle: "Sign up",
     loginSignUpTgleTxt: "Don't have an account ?",
   };
-  // Extracting the setUserData function from react zustand store
-  const userStoreData = useUserDataStore(({ userData, setUserData }) => {
-    return {
-      userData,
-      setUserData,
-    };
-  });
-  console.log("User Store DataXXXXXX ", userStoreData);
   // Texts
   const handleExternalLogin = () => {
     console.log("Test External Login !!");

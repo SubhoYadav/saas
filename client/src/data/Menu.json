@@ -37,44 +37,6 @@
     ]
   },
   {
-    "title": "EXPLORE",
-    "excluded_roles": "",
-    "items": [
-      {
-        "icon": "/product.svg",
-        "linkText": "Make Payment",
-        "lnk": "/products",
-        "excluded_roles": ""
-      },
-      {
-        "icon": "/order.svg",
-        "linkText": "Consignments",
-        "excluded_roles": ""
-      }
-    ]
-  },
-  {
-    "title": "GENERAL",
-    "excluded_roles": "",
-    "items": [
-      {
-        "icon": "/note.svg",
-        "linkText": "Notes",
-        "excluded_roles": ""
-      },
-      {
-        "icon": "/form.svg",
-        "linkText": "Conduct Survey",
-        "excluded_roles": ""
-      },
-      {
-        "icon": "/calendar.svg",
-        "linkText": "Calendar",
-        "excluded_roles": ""
-      }
-    ]
-  },
-  {
     "title": "MAINTAINANCE",
     "excluded_roles": "ROLE_USER",
     "items": [
@@ -94,22 +56,6 @@
         "icon": "/backup.svg",
         "linkText": "Backup",
         "excluded_roles": "ROLE_USER"
-      }
-    ]
-  },
-  {
-    "title": "ANALYTICS",
-    "excluded_roles": "ROLE_USER",
-    "items": [
-      {
-        "icon": "/chart.svg",
-        "linkText": "Charts",
-        "excluded_roles": "ROLE_USER"
-      },
-      {
-        "icon": "/log.svg",
-        "linkText": "Logs ",
-        "excluded_roles": "ROLE_USER,ROLE_ADMIN"
       }
     ]
   }

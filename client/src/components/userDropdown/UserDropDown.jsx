@@ -1,15 +1,6 @@
 import React from "react";
-import ReactCrop from "react-image-crop";
 import "./userDropDown.scss";
-import useUserDataStore from "../../zustand/userDataStore";
 export default function UserDropDown() {
-  const [crop, setCrop] = React.useState();
-  const userData = useUserDataStore(({ userData, setUserData }) => {
-    return {
-      userData,
-      setUserData,
-    };
-  });
   function handleLogout() {
     const logoutUserData = {
       userRole: "",
@@ -19,12 +10,11 @@ export default function UserDropDown() {
       userProfileImg: "",
       userId: "",
     };
-    userData.setUserData(logoutUserData);
   }
   return (
     <div className="user-dropdown-container">
       <div className="user">
-        <img src={userData.userData.userProfileImg} alt="" />
+        <img src="/avatar.png" alt="" />
         <i
           onClick={() => {
             console.log("Edit img...");
@@ -44,8 +34,8 @@ export default function UserDropDown() {
           />
         </i>
       </div>
-      <span>{userData.userData.userName}</span>
-      <small>{userData.userData.userRole.split("_")[1]}</small>
+      <span>Subho</span>
+      <small>{"User".split("_")[1]}</small>
       <button onClick={handleLogout}>
         <img src="/check-out.png" alt="" />
         Log out
