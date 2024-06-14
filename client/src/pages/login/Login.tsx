@@ -2,7 +2,7 @@ import React from "react";
 import "./login.scss";
 import { Formik } from "formik";
 import Notify from "../../components/notify/Notify";
-import notificationTypes from "../../cofigs/notificationTypes.js";
+import notificationTypes from "../../cofigs/notificationTypes.ts";
 import useReadToggleCtx from "../../hooks/useReadTogglectx";
 import useReadMsgCtx from "../../hooks/useReadMsgCtx";
 import { UserApi } from "../../webServices/user";

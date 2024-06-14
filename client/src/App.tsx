@@ -3,7 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./react-router/router";
 
 import "./styles/global.scss";
-import socket from "./socket.js";
+import socket from "./socket.ts";
 import initialiseFirebase from "./cofigs/firebase";
 
 // Setting up the websocket on the frontend
